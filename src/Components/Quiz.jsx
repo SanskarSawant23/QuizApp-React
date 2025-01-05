@@ -52,9 +52,9 @@ const Quiz = () => {
     <div className="h-screen flex grid gird-cols-1 justify-center items-center bg-gray-100">
         
     <div className="grid grid-cols-1 bg-white w-[640px] rounded-md text-left p-10">
-        
+      {result?<>Your Score is: {score}</>:<></>}
       <h2 className="mt-4">{index+1}. {question.question}</h2>
-      <ul className="list-none mt-4 text-left cursor-pointer ">
+      <ul className="list-none mt-4 text-left cursor-pointer">
         <li ref={Option1} onClick={(e)=>{onClick(e,1)}} className='border border-black rounded-md py-1 mb-2'>{question.option1}</li>  {/* every li tag has a refrence whenever we click on the wrong option then we call the refrence of the correct option*/}
         <li ref={Option2} onClick={(e)=>{onClick(e,2)}} className='border border-black rounded-md py-1 mb-2'>{question.option2}</li>
         <li ref={Option3} onClick={(e)=>{onClick(e,3)}} className='border border-black rounded-md py-1 mb-2'>{question.option3}</li>
